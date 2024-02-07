@@ -1,5 +1,6 @@
 /*
-
+6. Suppose you have a Train class. You have to keep track of how many trains have started their
+journey after 10 a.m. Write a code to implement the scenario.
 */
 
 class Train{
