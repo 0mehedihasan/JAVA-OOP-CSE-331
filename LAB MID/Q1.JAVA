@@ -70,6 +70,12 @@ class MyPoint {
 
 class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        MyPoint obj1 = new MyPoint();
+        MyPoint obj2 = new MyPoint(3,4);
+        System.out.println("First point: "+obj1);
+        System.out.println("Second point: "+obj2);
+        obj1.setXY(5,4);
+        System.out.println("New point: "+obj1);
+        System.out.println("Distance 1: "+obj1.distance(3,4));
     }
 }
