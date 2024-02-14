@@ -1,5 +1,13 @@
 /*
-
+3. Design a Simple Java_Phone. Create an interface named Contact_Numbers. This interface
+must have two methods named Dial_number() and Save_number(number). In case of saving a
+number, you need to have person’s name and 11 digits number (it must be maintained strictly and
+must start with 01). Create another interface named Messages, this interface must include
+Send_Message (message_length), Receive_Message() methods. The message length must not
+exceed 200 words. Create the third interface named Weather. This must include
+get_locationName(), set_locationName(l_name), get_Temparature(), set_temparature
+(type_temparature) and PrintWeatherInfo(). Implement all of them in a class. Test the whole
+scenario in a main function.
 */
 
 interface Contact_Numbers {
@@ -16,7 +24,7 @@ interface Weather {
     String get_locationName();
     void set_locationName(String l_name);
     int get_Temperature();
-    void set_temperature(String type_temperature);
+    void set_temperature(int type_temperature);
     void PrintWeatherInfo();
 }
 
@@ -67,8 +75,8 @@ class JavaPhone implements Contact_Numbers, Messages, Weather {
         return temperature;
     }
 
-    public void set_temperature(String type_temperature) {
-        // Implement temperature setting logic if needed
+    public void set_temperature(int type_temperature) {
+       temperature=type_temperature;
     }
 
     public void PrintWeatherInfo() {
@@ -85,8 +93,9 @@ class HelloWorld {
         javaPhone.Send_Message(78);
 
         javaPhone.set_locationName("Dhaka");
-        javaPhone.set_temperature("24");
+        javaPhone.set_temperature(24);
 
         javaPhone.PrintWeatherInfo();
     }
 }
+
