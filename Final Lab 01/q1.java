@@ -15,9 +15,9 @@ interface Movable {
 }
 
 class MovablePoint implements Movable {
-    int x, y, xSpeed, ySpeed;
+     int x, y, xSpeed, ySpeed;
 
-    public MovablePoint(int x, int y, int xSpeed, int ySpeed) {
+     MovablePoint(int x, int y, int xSpeed, int ySpeed) {
         this.x = x;
         this.y = y;
         this.xSpeed = xSpeed;
@@ -46,8 +46,8 @@ class MovablePoint implements Movable {
 }
 
 class MovableCircle implements Movable {
-    private int radius;
-    private MovablePoint center;
+    int radius;
+    private final MovablePoint center;
 
     public MovableCircle(int x, int y, int xSpeed, int ySpeed, int radius) {
         this.center = new MovablePoint(x, y, xSpeed, ySpeed);
@@ -71,11 +71,12 @@ class MovableCircle implements Movable {
     }
 
     public void displayInfo() {
-        System.out.println("Circle: Center (" + center.x + ", " + center.y + "), Radius: " + radius);
+        System.out.println("Circle: Center at (" + center.x + ", " + center.y + "), Radius: " + radius);
     }
 }
 
-class Main {
+
+class HelloWorld {
     public static void main(String[] args) {
         MovablePoint point = new MovablePoint(1, 2, 1, 1);
         MovableCircle circle = new MovableCircle(3, 4, 1, 1, 5);
