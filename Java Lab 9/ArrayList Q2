@@ -1,0 +1,58 @@
+/*
+Define a class named “Room” with variables “height”, “width”, and “length”. Add all
+necessary getter setter methods to initialize & display variables.
+ Now make five rooms using input mechanism and add them to an ArrayList. Read
+them one by one and show them into output.
+*/
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Room {
+    double height;
+    double width;
+    double length;
+    Room()
+    {
+        height = 0;
+        width = 0;
+        length = 0;
+    }
+
+     Room(double height, double width, double length) {
+        this.height = height;
+        this.width = width;
+        this.length = length;
+    }
+
+    public void display(ArrayList<Room> list) {
+        for (Room room : list) {
+            System.out.println("Height: " + room.height);
+            System.out.println("Width: " + room.width);
+            System.out.println("Length: " + room.length);
+            System.out.println();
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Room> rooms = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Enter height for room " + (i+1) + ":");
+            double height = scanner.nextDouble();
+            System.out.println("Enter width for room " + (i+1) + ":");
+            double width = scanner.nextDouble();
+            System.out.println("Enter length for room " + (i+1) + ":");
+            double length = scanner.nextDouble();
+
+            Room room = new Room(height, width, length);
+            rooms.add(room);
+        }
+
+        Room r1 = new Room(); 
+        r1.display(rooms);
+    }
+}
